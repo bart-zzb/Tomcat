@@ -36,3 +36,17 @@
         1) 响应行：包含三个信息：1.协议 2.响应状态码 3.响应状态
         2) 响应头：包含服务器的信息，服务器发送给浏览器的信心（内容的媒体类型，编码，内容长度等）
         3) 响应体：响应的实际内容（比如请求add.html页面，响应的内容就是<html><head><body><form>...）
+
+4. 会话
+   1) Http是无效的
+   2) 会话跟踪技术，客户端第一次发送请求时，可以通过服务器获取session，获取不到，则创建新的，然后响应给客户端
+   3) 常用的API:
+        request.getSession()->获取当前的会话，没有则创建一个新的会话
+        request.getSession(true)->效果和不带参数相同
+        request.getSession(false)->获取当前会话，没有则返回null，不会创建新的
+        
+        session.getId()->获取sessionID
+        session.isNew()->判断当前session是否是新的
+        session.getMaxInactiveInterval()->session的非激活间隔时长 默认1800秒（30个小时）
+        session.setMaxInactiveInterval()  
+        session.invalidate()->强制型让会话失效
