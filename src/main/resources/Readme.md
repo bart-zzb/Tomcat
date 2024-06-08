@@ -50,3 +50,10 @@
         session.getMaxInactiveInterval()->session的非激活间隔时长 默认1800秒（30个小时）
         session.setMaxInactiveInterval()  
         session.invalidate()->强制型让会话失效
+
+5. 会话作用域
+6. 服务器内部转发以及客户端重定向
+   1) 服务器内部转发: request.getRequestDispatcher("").forward(request,response)
+      (一次请求响应的过程,对于客户端而言,内部经过了多少转发,客户端是不知道的,地址栏没有变化)
+   2) 客户端重定向: response.sendRedirect("")
+      (两次请求响应的过程,客户端肯定指导请求URL有变化,地址栏会发生改变)

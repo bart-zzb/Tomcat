@@ -15,5 +15,11 @@ public class ServletAttribute extends HttpServlet {
         HttpSession session = req.getSession();
         //session作用域：向这个session存入一个attribute，key："token", value:"123456"
         session.setAttribute("token","123456");
+
+        //演示服务器内部转发
+        req.getRequestDispatcher("add").forward(req,resp);
+
+        //演示客户端重定向
+        resp.sendRedirect("add");
     }
 }
