@@ -26,5 +26,11 @@ public class AddServlet extends HttpServlet {
         String info = request.getParameter("info");
 
         System.out.println("name = " + name + " price = " + price + " count = " + count + " info = " + info);
+
+        //继承关系：
+        //1)HttpServlet -> GenericServlet -> Servlet
+        //2)Servlet中的核心方法：init(), service(), destroy()
+        //3)service会调用相对应do的方法：如doPost/doGet，所以必选实现相对应的方法，否则报405，不支持该方法的请求
+
     }
 }

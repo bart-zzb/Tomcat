@@ -3,14 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>AddServlet</servlet-name>
-        <servlet-class>com.example.javaweb.servlets.AddServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddServlet</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
     <!--
     1. 用户发请求，action=add
     2. 项目中，web.xml中找到url-pattern = /add =>第二行
@@ -19,4 +11,25 @@
     5. 找到第8行的servlet-class -> com.example.javaweb.servlets.AddServlet
     6. 用户发送的是post请求（method-post），因此tomcat会执行AddServlet中的doPost方法
     -->
+    <!--  访问测试路径：http://localhost:8080/pro/add.html-->
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>com.example.javaweb.servlets.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <!--  访问测试路径：http://localhost:8080/pro/servletLife-->
+    <servlet>
+        <servlet-name>ServletLife</servlet-name>
+        <servlet-class>com.example.javaweb.servlets.ServletLife</servlet-class>
+        <!-- 示例化的时机  -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletLife</servlet-name>
+        <url-pattern>/servletLife</url-pattern>
+    </servlet-mapping>
 </web-app>
