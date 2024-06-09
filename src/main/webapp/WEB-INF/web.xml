@@ -32,4 +32,7 @@
         <servlet-name>ServletLife</servlet-name>
         <url-pattern>/servletLife</url-pattern>
     </servlet-mapping>
+
+    <!-- servlet3.0可以通过注解方式进行配置, 如：@WebServlet("/servletLife")
+        -->
 </web-app>

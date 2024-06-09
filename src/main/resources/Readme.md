@@ -57,3 +57,11 @@
       (一次请求响应的过程,对于客户端而言,内部经过了多少转发,客户端是不知道的,地址栏没有变化)
    2) 客户端重定向: response.sendRedirect("")
       (两次请求响应的过程,客户端肯定指导请求URL有变化,地址栏会发生改变)
+7. Thymeleaf 视图模板技术
+   1) 添加thymeleaf的jar包
+   2) 在web.xml文件中添加配置
+8. servlet保存作用域
+   1) page级别
+   2) request级别：一次请求响应范围有效, request.setAttribute("","")
+   3) session级别：一次会话响应范围有效, request.getSession.setAttribute("","")/session.setAttribute("","")
+   4) application级别：一次应用范围有效, request.getServletContext.setAttribute("","")/ServletContext.setAttribute("","")
